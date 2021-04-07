@@ -1,9 +1,12 @@
-package com.savings;
+package com.savings.users;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.savings.accounts.AccountEntity;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -19,18 +22,18 @@ public class UserEntity {
     @GeneratedValue
     UUID id;
 
-    @Column
+    @Column(nullable = false)
     String name;
 
-    @Column
+    @Column(nullable = false)
     String surname;
 
-    @Column
     String patronymic;
 
-    @Column
     String email;
 
-    @Column
     String phoneNumber;
+
+    @OneToMany
+    List<AccountEntity> accounts;
 }

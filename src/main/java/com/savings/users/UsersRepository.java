@@ -1,4 +1,4 @@
-package com.savings;
+package com.savings.users;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
