@@ -1,9 +1,9 @@
 package com.savings.accounts.creation;
 
-import com.savings.accounts.structs.AccountCreationDto;
+import com.savings.accounts.structs.AccountDto;
 
 public interface AccountsCreationService {
 
-    void create(AccountCreationDto accountCreationDto);
+    void create(AccountDto accountDto);
 
 }

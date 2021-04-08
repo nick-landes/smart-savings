@@ -1,6 +1,5 @@
 package com.savings.users;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.savings.accounts.AccountEntity;
 import lombok.*;
 import lombok.experimental.FieldDefaults;

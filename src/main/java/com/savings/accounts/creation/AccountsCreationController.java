@@ -1,6 +1,6 @@
 package com.savings.accounts.creation;
 
-import com.savings.accounts.structs.AccountCreationDto;
+import com.savings.accounts.structs.AccountDto;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 @RequestMapping("/accounts/")
 @FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
-public class AccountCreationController {
+public class AccountsCreationController {
 
     AccountsCreationService accountsCreationService;
 
     @PostMapping("/")
-    void create(@RequestBody AccountCreationDto accountCreationDto) {
-        accountsCreationService.create(accountCreationDto);
+    public void create(@RequestBody AccountDto accountDto) {
+        accountsCreationService.create(accountDto);
     }
 }

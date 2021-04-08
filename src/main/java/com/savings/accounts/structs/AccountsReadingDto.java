@@ -1,29 +1,24 @@
 package com.savings.accounts.structs;
 
 import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.util.UUID;
 
-@ApiModel("Account creation description")
+@ApiModel("Account reading description")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class AccountCreationDto {
+public class AccountsReadingDto {
 
-    @ApiModelProperty("User UUID")
-    UUID userUUID;
+    UUID uuid;
 
-    @ApiModelProperty("Name")
     String name;
 
-    @ApiModelProperty("Current balance")
     Double balance;
 
-    @ApiModelProperty("Interest rate")
     Double interest;
 }

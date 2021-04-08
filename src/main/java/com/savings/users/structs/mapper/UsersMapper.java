@@ -23,6 +23,7 @@ public interface UsersMapper {
     // Reading
     @Mapping(target = "fullName", source = ".", qualifiedByName = "fullName")
     UserReadingDto toUserReadingDto(UserEntity userEntity);
+
     List<UserReadingDto> toUserReadingDto(List<UserEntity> users);
 
     @Named("fullName")

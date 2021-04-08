@@ -1,8 +1,8 @@
 package com.savings.accounts.creation.checkrules;
 
-import com.savings.accounts.structs.AccountCreationDto;
+import com.savings.accounts.structs.AccountDto;
 
 public interface AccountCreationCheckRule {
 
-    void check(AccountCreationDto accountCreationDto);
+    void check(AccountDto accountDto);
 }

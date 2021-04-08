@@ -1,6 +1,6 @@
 package com.savings.accounts.creation.checkrules;
 
-import com.savings.accounts.structs.AccountCreationDto;
+import com.savings.accounts.structs.AccountDto;
 import com.savings.users.reading.UsersReadingService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -14,8 +14,8 @@ public class UserExistsCheckRule implements AccountCreationCheckRule {
     UsersReadingService usersReadingService;
 
     @Override
-    public void check(AccountCreationDto accountCreationDto) {
-        usersReadingService.findOptionalByUUID(accountCreationDto.getUserUUID())
+    public void check(AccountDto accountDto) {
+        usersReadingService.findOptionalByUUID(accountDto.getUserUUID())
                 .orElseThrow(() -> new HttpClientErrorException(HttpStatus.NOT_FOUND, "User not found"));
     }
 }

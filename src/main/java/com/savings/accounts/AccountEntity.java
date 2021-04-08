@@ -1,6 +1,5 @@
 package com.savings.accounts;
 
-import com.savings.users.UserEntity;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -24,8 +23,9 @@ public class AccountEntity {
 
     String name;
 
-    //@Column(columnDefinition = "")
     Double balance;
 
     Double interest;
+
+    Double incomeInterest;
 }
