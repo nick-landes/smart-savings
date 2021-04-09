@@ -28,7 +28,7 @@ public interface UsersMapper {
 
     @Named("fullName")
     default String getUserFullName(UserEntity user) {
-        if (user.getPatronymic().isEmpty()) {
+        if (user.getPatronymic() == null) {
             return String.format("%s %s", user.getSurname(), user.getName());
         } else {
             return String.format("%s %s %s", user.getSurname(), user.getName(), user.getPatronymic());

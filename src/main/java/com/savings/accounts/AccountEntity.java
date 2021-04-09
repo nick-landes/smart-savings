@@ -1,9 +1,14 @@
 package com.savings.accounts;
 
+import com.savings.accounts.history.AccountHistoryEntity;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -28,4 +33,10 @@ public class AccountEntity {
     Double interest;
 
     Double incomeInterest;
+
+    @CreationTimestamp
+    LocalDateTime createdAt;
+
+    @OneToMany
+    List<AccountHistoryEntity> history;
 }

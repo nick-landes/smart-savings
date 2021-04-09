@@ -16,6 +16,7 @@ public interface AccountMapper {
     @Mapping(target = "uuid", ignore = true)
     AccountEntity toAccountEntity(AccountDto accountDto);
 
+    @Mapping(target = "userUUID", ignore = true)
     AccountDto toAccountDto(AccountEntity accountEntity);
 
     List<AccountDto> toAccountDto(List<AccountEntity> accounts);

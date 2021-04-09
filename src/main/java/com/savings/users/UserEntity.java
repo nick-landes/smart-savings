@@ -3,8 +3,10 @@ package com.savings.users;
 import com.savings.accounts.AccountEntity;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -32,6 +34,9 @@ public class UserEntity {
     String email;
 
     String phoneNumber;
+
+    @CreationTimestamp
+    LocalDateTime createdAt;
 
     @OneToMany
     List<AccountEntity> accounts;

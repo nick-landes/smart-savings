@@ -1,5 +1,6 @@
 package com.savings.accounts.structs;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
@@ -17,6 +18,7 @@ public class AccountDto {
 
     UUID uuid;
 
+    @JsonIgnore
     @ApiModelProperty("User UUID")
     UUID userUUID;
 

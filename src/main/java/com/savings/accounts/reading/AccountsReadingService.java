@@ -1,5 +1,6 @@
 package com.savings.accounts.reading;
 
+import com.savings.accounts.AccountEntity;
 import com.savings.accounts.structs.AccountDto;
 import com.savings.accounts.structs.SplitDto;
 
@@ -8,7 +9,9 @@ import java.util.UUID;
 
 public interface AccountsReadingService {
 
-    List<AccountDto> findByUserUUID(UUID uuid);
+    AccountEntity findById(UUID uuid);
+
+    List<AccountDto> findByUserUUID(UUID userUUID);
 
     List<SplitDto> getIncomeSplits(UUID userUUID, Double income);
 }
